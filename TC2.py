@@ -173,8 +173,8 @@ def vis_scene_data(nuscenes_path=None, nuscenes_version='v1.0-trainval', which_s
     img_save_dir = check_folder(os.path.join(img_save_dir, curr_scene['name']))
 
     while curr_sample_data['next'] != '':
-        # print('curr_sample_data_token:',curr_sample_data['token'])
-        # print('curr_sample_token:',curr_sample_data['sample_token'])
+        print('curr_sample_data_token:',curr_sample_data['token'])
+        print('curr_sample_token:',curr_sample_data['sample_token'])
         if has_reached_last_keyframe:
             break
 
