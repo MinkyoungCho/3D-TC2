@@ -550,7 +550,11 @@ class PointCloud(ABC):
             if future_is_key_frame and k < 20:
                 csd_path = current_sd_rec['filename'].split('/')
                 print('former filename:',current_sd_rec['filename'])
-                # csd_path[1] = 'LIDAR_TOP_benign'
+
+                
+                # - temproally commeted by MK 
+                # - ask for poisoned LiDAR dataset
+                # csd_path[1] = 'LIDAR_TOP_benign' 
                 csd_path[0] = 'pcs'
                 if id_ref ==0:
                     csd_path[1] = 'LIDAR_TOP_attack_car'
@@ -560,6 +564,7 @@ class PointCloud(ABC):
                     csd_path[1] = 'LIDAR_TOP_attack_cyl'
                 current_sd_rec['filename'] = os.path.join(*csd_path)
                 print('current filename:',current_sd_rec['filename'])
+                
 
             # Load up the pointcloud.
             current_pc = cls.from_file(osp.join(nusc.dataroot, current_sd_rec['filename']))
